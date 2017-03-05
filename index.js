@@ -2,33 +2,15 @@
 	// create a grid of n by n
 	const n = 10
 
-	// let GridBlock = function(n){
-	// 	draw: function(){
-	// 		$('div')
-	// 	}
-	// }
-
-
-	// // create a Game object
-	// let Game = function(){ }
-	// Game.prototype.start = function(){
-	// 	// create a gridBlock
-	// 	let gridBlock = new GridBlock(n)
-
-	// }
-
-	// let game = new Game()
-	// game.start()
-
-	createGrid(n)
-
-
-
-
 	// create an object that represents a cell
 		// id based on row and column
-		// click function to toggle the cell to be empty or full
+	createGrid(n)
 
+	// click function to toggle the cell to be empty or full
+	$('.cell').click(function(e){
+		$(this).css('background-color', 'yellow')
+		// $(this).addClass('yellow')
+	})
 
 
 
@@ -63,7 +45,8 @@ function createGrid(n) {
 
 		for (var j = 0; j < n; j++) {
 			let cell = $('<div>', {
-				class: 'cell'
+				class: 'cell',
+				id: i+'-'+j
 			})
 			gridRow.append(cell)
 		};
